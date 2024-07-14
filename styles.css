@@ -38,4 +38,24 @@ li {
 }
 audio {
     margin-left: 10px;
+    width: 500px;
+    height: 30px;
+    background-color: #7289da;
+    border-radius: 200px;
+    color: #fff;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #7289da;
+    border-radius: 5px;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    color: #fff;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #fff;
 }
