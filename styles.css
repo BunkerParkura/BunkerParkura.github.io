@@ -33,7 +33,25 @@ body {
 .button:hover {
     background-color: #5a6cb2;
 }
+.achiv-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.external-link-button {
+    position: absolute; 
+    top: 0;            
+    right: 0;           
+    background-color: transparent; 
+    border: none;       
+    color: inherit;    
+    cursor: pointer;  
+    padding: 10px;    
+}
 
+.external-link-button span {
+    visibility: hidden; 
+}
 .container {
     background-color: #2f3136;
     padding: 20px;
