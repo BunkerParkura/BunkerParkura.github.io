@@ -29,7 +29,7 @@ function koney() {
   var style = [
     "padding: 10rem;",
     "background: white;",
-    "font: 9.0rem/1 Georgia;",
+    "font: 7.0rem/1 Georgia;",
     `color: ${color};`,
   ].join("");
 
