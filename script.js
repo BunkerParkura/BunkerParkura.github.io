@@ -36,9 +36,9 @@ function koney() {
   console.log("%c%s", style, str);
   Ucolor();
 }
-setInterval(() => {
-  koney();
-}, 1);
+// setInterval(() => {
+//   koney();
+// }, 1);
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -56,7 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.addEventListener('click', function() {
       if (!played) {
-          audio.play();
+          audio.play().then(function() {
+              console.log('Audio is playing');
+          }).catch(function(error) {
+              console.log('Error playing audio:', error);
+          });
           played = true;
       }
   });
