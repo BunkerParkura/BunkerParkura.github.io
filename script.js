@@ -82,6 +82,4 @@ function roma() {
             <source src="${videoPath}" type="video/mp4">
         </video>
     `;
-  newTab.document.close();
-    newTab.document.close();
 }
