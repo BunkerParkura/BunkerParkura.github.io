@@ -63,28 +63,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 function roma() {
   var videoPath = "roma.mp4"; 
-  var newTab = window.open();
-    var newTab = window.open();
-    newTab.document.write(`
-      <style>
-          body {
-              margin: 0;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100vh;
-              background-color: black; /* Задний фон для контраста */
-          }
-          video {
-              max-width: 100%;
-              max-height: 100%;
-          }
-      </style>
-      <video autoplay controls>
-          <source src="${videoPath}" type="video/mp4">
-          Ваш браузер не поддерживает воспроизведение видео.
-      </video>
-  `);
+  document.body.innerHTML = `
+        <style>
+            body {
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: black;
+            }
+            video {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        </style>
+        <video autoplay controls>
+            <source src="${videoPath}" type="video/mp4">
+        </video>
+    `;
   newTab.document.close();
     newTab.document.close();
 }
