@@ -83,7 +83,10 @@ function roma() {
         </video>
     `;
 }
-
+function playSound(filePath) {
+  const audio = new Audio(filePath);
+  audio.play();
+}
 function imgfly(src) {
   const img = document.createElement('img');
   img.src = src;
@@ -107,5 +110,24 @@ document.getElementById('XDBUTTON').addEventListener('click', () => {
       imgfly('https://cdn.discordapp.com/attachments/233231551192760320/1113828223055302748/ezgif.com-crop_2.gif?ex=66aedf9e&is=66ad8e1e&hm=a1b043b90ec415f8dd125dac5cbab4cf834428633352b1415753990258eb8477&');
       imgfly('https://media.discordapp.net/attachments/874694279409307718/1175154820240388117/attachment-3-3.gif?ex=66ae8436&is=66ad32b6&hm=aa54e4bcb58ec2bf0528884eac8eaf4ee7a9507bc63a1432629256f77a6a58a6&');
       imgfly('https://media.discordapp.net/attachments/1044084883485630464/1167534458811994223/6C8B2791-ADA7-4356-8B36-6F23BCFD7C92.gif?ex=66ae7ab2&is=66ad2932&hm=d60b5037917723980941b00846d12ae67a558e954011a4bea2c467692d8cdc9b&');
+
+      playSound('sounds/goofy-ahh-backrooms.mp3');
+      playSound('sounds/goofy-ahh-car-horn-sound-effect.mp3');
+      playSound('sounds/goofy-ahh-laugh-meme.mp3');
+      playSound('sounds/goofy-ahh-laugh.mp3');
+      playSound('sounds/goofy-ahh-ringtone.mp3');
+      playSound('sounds/goofy-ahh-sounds.mp3');
+      playSound('sounds/goofy-ahh-spongebob-sound.mp3');
+      playSound('sounds/goofy-ahh.mp3');
+      playSound('sounds/goofy-ahhh.mp3');
+      playSound('sounds/goofy-yell_LvAybRd.mp3');
+      playSound('sounds/gugugugu.mp3');
+      playSound('sounds/hold-up-tiktok.mp3');
+      playSound('sounds/ohio-goofy-ahh.mp3');
+      playSound('sounds/quandale-goofy-ahh-laugh.mp3');
+      playSound('sounds/raaaah.mp3');
+      playSound('sounds/scooby-doo-laugh-sped-up.mp3');
+      playSound('sounds/what-the-hell-goofy-ahh-slv-sounds.mp3');
+
   }, 0);
 });
