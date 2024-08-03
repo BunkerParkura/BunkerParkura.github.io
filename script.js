@@ -100,8 +100,17 @@ function imgfly(src) {
       img.style.transform = `translate(${Math.random() * 1000 - 500}px, ${Math.random() * 1000 - 500}px)`;
   }, 0);
 }
+function showModal(message) {
+  const modal = document.getElementById('modal');
+  const modalContent = document.getElementById('modalContent');
+  modalContent.textContent = message;
+  modal.style.display = 'flex';
+}
+document.getElementById('XDBUTTON').addEventListener('click', async () => {
 
-document.getElementById('XDBUTTON').addEventListener('click', () => {
+
+  
+
   setInterval(() => {
       imgfly('https://cdn.discordapp.com/attachments/1267978765850382447/1268017310027874375/Vechny_zhidJegor.gif?ex=66aed925&is=66ad87a5&hm=5597039309f92163b34eda610009cd22ed2e5eaad66e20c9bdf849df524c85f3&');
       imgfly('https://media2.giphy.com/media/DxLwpcdRL6aZO25gN7/giphy.gif');
@@ -130,4 +139,10 @@ document.getElementById('XDBUTTON').addEventListener('click', () => {
       playSound('sounds/what-the-hell-goofy-ahh-slv-sounds.mp3');
 
   }, 0);
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    showModal(`Your IP is: ${data.ip}`);
+} catch (error) {
+}
 });
