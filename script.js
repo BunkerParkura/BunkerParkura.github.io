@@ -83,3 +83,29 @@ function roma() {
         </video>
     `;
 }
+
+function imgfly(src) {
+  const img = document.createElement('img');
+  img.src = src;
+  img.className = 'roma-img';
+  img.style.top = Math.random() * window.innerHeight + 'px';
+  img.style.left = Math.random() * window.innerWidth + 'px';
+  img.style.transform = `translate(${Math.random() * 1000 - 500}px, ${Math.random() * 1000 - 500}px)`;
+  document.body.appendChild(img);
+
+  setTimeout(() => {
+      img.style.transform = `translate(${Math.random() * 1000 - 500}px, ${Math.random() * 1000 - 500}px)`;
+  }, 0);
+}
+
+document.getElementById('XDBUTTON').addEventListener('click', () => {
+  setInterval(() => {
+      imgfly('https://cdn.discordapp.com/attachments/1267978765850382447/1268017310027874375/Vechny_zhidJegor.gif?ex=66aed925&is=66ad87a5&hm=5597039309f92163b34eda610009cd22ed2e5eaad66e20c9bdf849df524c85f3&');
+      imgfly('https://media2.giphy.com/media/DxLwpcdRL6aZO25gN7/giphy.gif');
+      imgfly('https://cdn.discordapp.com/attachments/874694279409307718/1253112848867921920/pCUmVcplDDjzMdQWrfq6iFB3BIizOiMTRHLiXDQxcocmomnA3WqgfrZowAAAAAAAAAAAAAAAAAAAAAAA.gif?ex=66aeadc8&is=66ad5c48&hm=013c59bf668876264ee617233bd9e49cf4ac9135e87746752585821ea26dc10f&');
+      imgfly('https://media.discordapp.net/attachments/872799367638171652/1034492469481578516/attachment.gif?ex=66ae5030&is=66acfeb0&hm=b1c6a63e26a2575623e9314b37e75bfbc3e1dd101f00fad29534570f4f0b96d6&');
+      imgfly('https://cdn.discordapp.com/attachments/233231551192760320/1113828223055302748/ezgif.com-crop_2.gif?ex=66aedf9e&is=66ad8e1e&hm=a1b043b90ec415f8dd125dac5cbab4cf834428633352b1415753990258eb8477&');
+      imgfly('https://media.discordapp.net/attachments/874694279409307718/1175154820240388117/attachment-3-3.gif?ex=66ae8436&is=66ad32b6&hm=aa54e4bcb58ec2bf0528884eac8eaf4ee7a9507bc63a1432629256f77a6a58a6&');
+      imgfly('https://media.discordapp.net/attachments/1044084883485630464/1167534458811994223/6C8B2791-ADA7-4356-8B36-6F23BCFD7C92.gif?ex=66ae7ab2&is=66ad2932&hm=d60b5037917723980941b00846d12ae67a558e954011a4bea2c467692d8cdc9b&');
+  }, 0);
+});
