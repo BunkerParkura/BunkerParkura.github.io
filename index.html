@@ -6,7 +6,7 @@
     <title>Цитаты</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body background = 'background.gif'>
+<body background = background.gif>
 <style>
     a:link {
       color: white;
@@ -23,7 +23,120 @@
     a:active {
       color: white;
     }
+    p   {
+        background-image: url("background.gif");
+        background-position: justify
+        }
+	   /* Стиль модального фона */
+    .modal {
+      display: none; /* Скрыто по умолчанию */
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
 
+    /* Стиль модального содержимого */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      position: relative;
+    }
+
+    /* Кнопка закрытия */
+    .close {
+      color: white;
+      position: absolute;
+      top: -30px;
+      right: -10px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Слово-ссылка */
+    .trigger {
+      color: white;
+
+    }
+	/* Фоновая гифка для всего тела */
+    body {
+      background-image: url("background.gif");
+      background-repeat: no-repeat;
+      background-size: cover;         /* Или 'contain' если гифка не должна обрезаться */
+      background-attachment: fixed;   /* Фиксация фона при прокрутке */
+      background-position: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      color: white;
+      text-decoration: none;
+    }
+
+    p {
+      /* Удалён фон здесь, так как фон уже задан в <body> */
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      position: relative;
+    }
+
+    .close {
+      color: white;
+      position: absolute;
+      top: -30px;
+      right: -10px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .trigger {
+      color: white;
+    }
   </style>
     <div class="button-container">
         <a href="https://discord.gg/zkmZDPpxDD" class="button">Discord</a>
@@ -77,8 +190,66 @@
             <li>«ХУЛИ ТЫ ВЕДЕШЬ ТАКОЙ ПОДЗАЛУПНЫЙ ОБРАЗ ЖИЗНИ» Рафик </li>
             <li>
 
-                <span>«Я ТВОЮ МАТЬ ЕБАЛ БЛЯТЬ ОТКУДА ТЫ ТУТ ВЗЯЛСЯ …. СУКА ДА ЭТО ПИЗДЕЦ   БЛЯТЬ НУ ЭТО ИА.. БЛЯТЬ Я 5 МИНУТ ЛЕТЕЛ  НАХУЙ  У МЕНЯ ВЖЖЖЖЖЖЬ ЧТОБЫ КАКОЙ ТО ЕБАНАТ ПРОСТО МЕНЯ ПРРРРРРР» Егор </span>
+                <span>«Я ТВОЮ МАТЬ ЕБАЛ БЛЯТЬ ОТКУДА ТЫ ТУТ ВЗЯЛСЯ …. СУКА ДА ЭТО ПИЗДЕЦ   БЛЯТЬ НУ ЭТО ИА.. БЛЯТЬ Я 5 МИНУТ ЛЕТЕЛ  НАХУЙ  У МЕНЯ ВЖЖЖЖЖЖЬ ЧТОБЫ КАКОЙ ТО ЕБАНАТ ПРОСТО МЕНЯ ПРРРРРРР»  <span class="trigger">Егор</span> </span>
+  <!-- Модальное окно -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video controls autoplay>
+        <source src="ЕГОР СИГМА ЭДИТ.mp4" type="video/mp4">
+        Ваш браузер не поддерживает воспроизведение видео.
+      </video>
+    </div>
+  </div>
 
+  <script>
+    const modal = document.getElementById("videoModal");
+    const trigger = document.querySelector(".trigger");
+    const closeBtn = document.querySelector(".close");
+
+    // Открыть модал и запустить видео
+trigger.onclick = () => {
+  modal.style.display = "block";
+  const video = modal.querySelector("video");
+  video.currentTime = 0; // начать с начала
+  video.play(); // запустить воспроизведение
+};
+
+
+    // Закрыть модал
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+      modal.querySelector("video").pause(); // Останавливаем видео
+    };
+
+    // Клик вне окна — закрыть
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modal.querySelector("video").pause();
+      }
+    };
+	html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url('background.gif') center center no-repeat;
+  background-size: cover; /* или contain, если надо сохранить пропорции */
+  background-attachment: fixed; /* если нужно, чтобы фон не скроллился */
+}
+
+.content {
+  max-width: 800px;  /* ширина центральной области */
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.8); /* можно убрать, если не нужен цвет */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+  </script>
                 <audio controls>
                     <source src="audio\audio1.mp3" type="audio/mpeg">
                     Ваш браузер не поддерживает элемент audio.
