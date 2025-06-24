@@ -41,7 +41,7 @@ setInterval(() => {
 }, 1);
 
 
-document.addEventListener('DOMContentLoaded', function() {
+
 
   var audio = document.createElement('audio');
 
