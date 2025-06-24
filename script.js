@@ -42,18 +42,6 @@ setInterval(() => {
 
 
 
-
-  var audio = document.createElement('audio');
-
-  var source = document.createElement('source');
-  source.src = 'audio/bindi.mp3';
-  source.type = 'audio/mpeg';
-  audio.appendChild(source);
-
-  document.body.appendChild(audio);
-
-  var played = false;
-
   document.addEventListener('click', function() {
       if (!played) {
           audio.play();
